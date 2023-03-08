@@ -7,3 +7,9 @@ export default defineConfig({
     GlobPlugin(),
   ],
 })
+// "simple-git-hooks": {
+//   "pre-commit": "pnpm lint-staged"
+// },
+// "lint-staged": {
+//   "*": "eslint --fix"
+// }

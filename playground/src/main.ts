@@ -27,8 +27,8 @@ interface ModuleType {
   name: string
 }
 
-const list = import.meta.globNext<ModuleType>('./fixtures/*.ts', { eager: true })
-Promise.all(list.map(i => i()))
-  .then((module) => {
-    app.textContent = JSON.stringify(module) // [{name:'a'}]
-  })
+const list = import.meta.globNext<ModuleType>('./fixtures/*.ts')
+// console.log(list)
+Promise.all(Object.values(list).map((i: any) => i())).then(module => {
+  app.textContent = JSON.stringify(module) // [{name:'a'}]
+})
